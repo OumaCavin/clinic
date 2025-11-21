@@ -3,9 +3,9 @@ Context processor for site-wide settings
 """
 from django.conf import settings
 
-def site_settings(request):
+def contact_info(request):
     """
-    Add site settings to template context
+    Add contact information to template context
     """
     return {
         'site_name': getattr(settings, 'SITE_NAME', 'Medical Clinic'),
