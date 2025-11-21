@@ -1,0 +1,317 @@
+{% extends 'base.html' %}
+
+{% block title %}About Us - {{ site_name }}{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="hero-section" style="padding: 120px 0 80px;">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto text-center">
+                <h1 class="hero-title" style="font-size: 3rem;">About {{ site_name }}</h1>
+                <p class="hero-subtitle">Your trusted healthcare partner in Kenya, dedicated to providing exceptional medical care with compassion and expertise.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Doctor Profile Section -->
+<section class="section">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6 mb-5">
+                <img src="/media/images/doctor_portrait_1.jpg" alt="Dr. Cavin Otieno" class="img-fluid rounded-4 shadow-lg">
+            </div>
+            <div class="col-lg-6">
+                <div class="doctor-profile">
+                    <h2 class="section-title text-start">{{ about_title }}</h2>
+                    <p class="lead text-primary fw-bold mb-4">Board-Certified Medical Practitioner</p>
+                    <div class="about-text">
+                        <p class="mb-4">{{ about_content }}</p>
+                        
+                        <h5 class="fw-bold mb-3">Medical Qualifications</h5>
+                        <ul class="list-unstyled mb-4">
+                            <li class="mb-2"><i class="fas fa-graduation-cap text-primary me-2"></i>MBChB - Bachelor of Medicine and Bachelor of Surgery</li>
+                            <li class="mb-2"><i class="fas fa-certificate text-primary me-2"></i>Certified Family Medicine Practitioner</li>
+                            <li class="mb-2"><i class="fas fa-award text-primary me-2"></i>Advanced Training in Emergency Medicine</li>
+                            <li class="mb-2"><i class="fas fa-book text-primary me-2"></i>Continuing Medical Education (CME) Certified</li>
+                        </ul>
+                        
+                        <h5 class="fw-bold mb-3">Areas of Expertise</h5>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <ul class="list-unstyled">
+                                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Family Medicine</li>
+                                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Emergency Care</li>
+                                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Preventive Medicine</li>
+                                </ul>
+                            </div>
+                            <div class="col-md-6">
+                                <ul class="list-unstyled">
+                                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Pediatric Care</li>
+                                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Chronic Disease Management</li>
+                                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Health Screening</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Mission & Vision Section -->
+<section class="section" style="background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);">
+    <div class="container">
+        <div class="row g-4">
+            <div class="col-lg-4">
+                <div class="card h-100 text-center">
+                    <div class="card-body">
+                        <div class="card-icon mb-4">
+                            <i class="fas fa-heart" style="font-size: 4rem; color: var(--primary-color);"></i>
+                        </div>
+                        <h3 class="card-title fw-bold mb-3">Our Mission</h3>
+                        <p class="card-text">To provide accessible, comprehensive, and compassionate healthcare services that improve the quality of life for individuals and families in Kenya through evidence-based medicine and personalized care.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-4">
+                <div class="card h-100 text-center">
+                    <div class="card-body">
+                        <div class="card-icon mb-4">
+                            <i class="fas fa-eye" style="font-size: 4rem; color: var(--primary-color);"></i>
+                        </div>
+                        <h3 class="card-title fw-bold mb-3">Our Vision</h3>
+                        <p class="card-text">To be the leading healthcare provider in Kenya, recognized for excellence in patient care, medical innovation, and community health advancement while maintaining the highest standards of professionalism and integrity.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-4">
+                <div class="card h-100 text-center">
+                    <div class="card-body">
+                        <div class="card-icon mb-4">
+                            <i class="fas fa-heartbeat" style="font-size: 4rem; color: var(--primary-color);"></i>
+                        </div>
+                        <h3 class="card-title fw-bold mb-3">Our Values</h3>
+                        <p class="card-text">
+                            <strong>Compassion:</strong> Treating every patient with empathy and respect<br>
+                            <strong>Excellence:</strong> Delivering the highest quality care<br>
+                            <strong>Integrity:</strong> Maintaining ethical standards<br>
+                            <strong>Innovation:</strong> Embracing medical advancement
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Team Section -->
+<section class="section">
+    <div class="container">
+        <h2 class="section-title">Meet Our Professional Team</h2>
+        <p class="section-subtitle">Our dedicated healthcare professionals committed to your wellbeing</p>
+        
+        <div class="row g-4">
+            <div class="col-lg-4 col-md-6">
+                <div class="card h-100">
+                    <div class="card-body text-center">
+                        <img src="/media/images/medical_team_5.jpg" alt="Medical Team" class="rounded-circle mb-3" width="120" height="120" style="object-fit: cover;">
+                        <h5 class="card-title fw-bold">Dr. Cavin Otieno</h5>
+                        <p class="text-primary fw-semibold">Lead Physician & Medical Director</p>
+                        <p class="card-text">Board-certified with over 10 years of experience in family medicine and emergency care.</p>
+                        <div class="social-links justify-content-center">
+                            <a href="mailto:{{ contact_email }}" class="social-link" style="width: 35px; height: 35px;">
+                                <i class="fas fa-envelope"></i>
+                            </a>
+                            <a href="tel:{{ contact_phone }}" class="social-link" style="width: 35px; height: 35px;">
+                                <i class="fas fa-phone"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-4 col-md-6">
+                <div class="card h-100">
+                    <div class="card-body text-center">
+                        <img src="/media/images/medical_team_3.jpg" alt="Nurse" class="rounded-circle mb-3" width="120" height="120" style="object-fit: cover;">
+                        <h5 class="card-title fw-bold">Nurse Mary Wanjiku</h5>
+                        <p class="text-primary fw-semibold">Registered Nurse</p>
+                        <p class="card-text">Experienced in pediatric care and patient education with a passion for community health.</p>
+                        <div class="social-links justify-content-center">
+                            <a href="mailto:{{ contact_email }}" class="social-link" style="width: 35px; height: 35px;">
+                                <i class="fas fa-envelope"></i>
+                            </a>
+                            <a href="https://{{ whatsapp_link }}" target="_blank" class="social-link" style="width: 35px; height: 35px;">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-4 col-md-6">
+                <div class="card h-100">
+                    <div class="card-body text-center">
+                        <img src="/media/images/medical_team_1.jpg" alt="Laboratory Technician" class="rounded-circle mb-3" width="120" height="120" style="object-fit: cover;">
+                        <h5 class="card-title fw-bold">Tech Joseph Mwangi</h5>
+                        <p class="text-primary fw-semibold">Laboratory Technician</p>
+                        <p class="card-text">Specialized in diagnostic testing and laboratory management with attention to accuracy.</p>
+                        <div class="social-links justify-content-center">
+                            <a href="mailto:{{ contact_email }}" class="social-link" style="width: 35px; height: 35px;">
+                                <i class="fas fa-envelope"></i>
+                            </a>
+                            <a href="https://{{ whatsapp_link }}" target="_blank" class="social-link" style="width: 35px; height: 35px;">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Facility Section -->
+<section class="section" style="background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%); color: white;">
+    <div class="container">
+        <h2 class="section-title" style="color: white;">Our Modern Healthcare Facility</h2>
+        <p class="section-subtitle" style="color: rgba(255,255,255,0.9);">State-of-the-art medical equipment and comfortable environment for optimal patient care</p>
+        
+        <div class="row align-items-center">
+            <div class="col-lg-6 mb-4">
+                <img src="/media/images/clinic_interior_6.jpeg" alt="Clinic Interior" class="img-fluid rounded-4 shadow-lg">
+            </div>
+            <div class="col-lg-6">
+                <h3 class="fw-bold mb-4">Advanced Medical Technology</h3>
+                <p class="mb-4" style="opacity: 0.9;">Our clinic is equipped with modern medical equipment and technology to ensure accurate diagnoses and effective treatments. We maintain the highest standards of cleanliness and safety protocols.</p>
+                
+                <div class="facility-features">
+                    <div class="feature-item mb-3">
+                        <i class="fas fa-check-circle me-3" style="color: var(--accent-color);"></i>
+                        <span>Modern examination rooms with latest equipment</span>
+                    </div>
+                    <div class="feature-item mb-3">
+                        <i class="fas fa-check-circle me-3" style="color: var(--accent-color);"></i>
+                        <span>State-of-the-art laboratory facilities</span>
+                    </div>
+                    <div class="feature-item mb-3">
+                        <i class="fas fa-check-circle me-3" style="color: var(--accent-color);"></i>
+                        <span>Comfortable waiting areas with WiFi</span>
+                    </div>
+                    <div class="feature-item mb-3">
+                        <i class="fas fa-check-circle me-3" style="color: var(--accent-color);"></i>
+                        <span>Emergency care facilities</span>
+                    </div>
+                    <div class="feature-item mb-3">
+                        <i class="fas fa-check-circle me-3" style="color: var(--accent-color);"></i>
+                        <span>Pharmacy services on-site</span>
+                    </div>
+                    <div class="feature-item mb-3">
+                        <i class="fas fa-check-circle me-3" style="color: var(--accent-color);"></i>
+                        <span>Wheelchair accessible facilities</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Achievement Section -->
+<section class="section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto text-center">
+                <h2 class="section-title">Our Commitment to Excellence</h2>
+                <p class="section-subtitle">Years of dedicated service to the Kenyan healthcare community</p>
+                
+                <div class="row g-4 mt-4">
+                    <div class="col-lg-3 col-md-6">
+                        <div class="achievement-card">
+                            <h3 class="display-4 fw-bold text-primary">5000+</h3>
+                            <p class="fw-semibold">Patients Treated</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="achievement-card">
+                            <h3 class="display-4 fw-bold text-primary">10+</h3>
+                            <p class="fw-semibold">Years Experience</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="achievement-card">
+                            <h3 class="display-4 fw-bold text-primary">24/7</h3>
+                            <p class="fw-semibold">Emergency Care</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="achievement-card">
+                            <h3 class="display-4 fw-bold text-primary">98%</h3>
+                            <p class="fw-semibold">Patient Satisfaction</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="section" style="background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto text-center">
+                <h2 class="section-title">Experience Quality Healthcare Today</h2>
+                <p class="section-subtitle">Join thousands of satisfied patients who trust Dr. Cavin Otieno and our team for their healthcare needs</p>
+                <div class="cta-buttons">
+                    <a href="{% url 'appointments' %}" class="btn-custom me-3">
+                        <i class="fas fa-calendar-plus me-2"></i>Book Your Appointment
+                    </a>
+                    <a href="{% url 'contact' %}" class="btn-custom" style="background: var(--primary-color); color: white;">
+                        <i class="fas fa-phone me-2"></i>Contact Our Team
+                    </a>
+                </div>
+                <div class="mt-4">
+                    <p class="text-muted">
+                        <i class="fas fa-phone me-2"></i>{{ contact_phone }} | 
+                        <i class="fab fa-whatsapp me-2"></i><a href="https://{{ whatsapp_link }}" target="_blank">WhatsApp</a> | 
+                        <i class="fas fa-envelope me-2"></i>{{ contact_email }}
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block extra_css %}
+<style>
+.doctor-profile {
+    padding: 2rem 0;
+}
+
+.achievement-card {
+    padding: 2rem 1rem;
+    transition: all 0.3s ease;
+}
+
+.achievement-card:hover {
+    transform: translateY(-5px);
+}
+
+.facility-features .feature-item {
+    font-weight: 500;
+    font-size: 1.1rem;
+}
+
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2.5rem !important;
+    }
+}
+</style>
+{% endblock %}

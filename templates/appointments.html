@@ -1,0 +1,530 @@
+{% extends 'base.html' %}
+
+{% block title %}Book Appointment - {{ site_name }}{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="hero-section" style="padding: 120px 0 80px;">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto text-center">
+                <h1 class="hero-title" style="font-size: 3rem;">{{ title }}</h1>
+                <p class="hero-subtitle">{{ appointment_text }} and take the first step towards better health with our experienced medical team.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Appointment Booking Form -->
+<section class="section">
+    <div class="container">
+        <div class="row g-5">
+            <div class="col-lg-8">
+                <div class="appointment-form-container">
+                    <h2 class="section-title text-start mb-4">Schedule Your Appointment</h2>
+                    <p class="mb-4">Please fill out the form below to book your appointment. Our team will contact you to confirm your preferred date and time.</p>
+                    
+                    <form class="appointment-form" id="appointmentForm">
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label for="firstName" class="form-label">First Name *</label>
+                                <input type="text" class="form-control" id="firstName" name="firstName" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="lastName" class="form-label">Last Name *</label>
+                                <input type="text" class="form-control" id="lastName" name="lastName" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="email" class="form-label">Email Address *</label>
+                                <input type="email" class="form-control" id="email" name="email" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="phone" class="form-label">Phone Number *</label>
+                                <input type="tel" class="form-control" id="phone" name="phone" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="dateOfBirth" class="form-label">Date of Birth</label>
+                                <input type="date" class="form-control" id="dateOfBirth" name="dateOfBirth">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="preferredDate" class="form-label">Preferred Appointment Date *</label>
+                                <input type="date" class="form-control" id="preferredDate" name="preferredDate" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="preferredTime" class="form-label">Preferred Time *</label>
+                                <select class="form-select" id="preferredTime" name="preferredTime" required>
+                                    <option value="">Select time slot...</option>
+                                    <option value="08:00">8:00 AM</option>
+                                    <option value="08:30">8:30 AM</option>
+                                    <option value="09:00">9:00 AM</option>
+                                    <option value="09:30">9:30 AM</option>
+                                    <option value="10:00">10:00 AM</option>
+                                    <option value="10:30">10:30 AM</option>
+                                    <option value="11:00">11:00 AM</option>
+                                    <option value="11:30">11:30 AM</option>
+                                    <option value="12:00">12:00 PM</option>
+                                    <option value="12:30">12:30 PM</option>
+                                    <option value="13:00">1:00 PM</option>
+                                    <option value="13:30">1:30 PM</option>
+                                    <option value="14:00">2:00 PM</option>
+                                    <option value="14:30">2:30 PM</option>
+                                    <option value="15:00">3:00 PM</option>
+                                    <option value="15:30">3:30 PM</option>
+                                    <option value="16:00">4:00 PM</option>
+                                    <option value="16:30">4:30 PM</option>
+                                    <option value="17:00">5:00 PM</option>
+                                    <option value="17:30">5:30 PM</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="serviceType" class="form-label">Service Type *</label>
+                                <select class="form-select" id="serviceType" name="serviceType" required>
+                                    <option value="">Select service...</option>
+                                    <option value="general">General Consultation</option>
+                                    <option value="preventive">Preventive Care</option>
+                                    <option value="pediatric">Pediatric Care</option>
+                                    <option value="emergency">Emergency Care</option>
+                                    <option value="chronic">Chronic Disease Management</option>
+                                    <option value="laboratory">Laboratory Services</option>
+                                    <option value="followup">Follow-up Visit</option>
+                                    <option value="specialist">Specialist Consultation</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            <div class="col-12">
+                                <label for="chiefComplaint" class="form-label">Reason for Visit *</label>
+                                <textarea class="form-control" id="chiefComplaint" name="chiefComplaint" rows="4" placeholder="Please describe your symptoms or reason for the appointment..." required></textarea>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="currentMedications" class="form-label">Current Medications</label>
+                                <textarea class="form-control" id="currentMedications" name="currentMedications" rows="3" placeholder="List any current medications or leave blank if none"></textarea>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="allergies" class="form-label">Known Allergies</label>
+                                <textarea class="form-control" id="allergies" name="allergies" rows="3" placeholder="List any known allergies or leave blank if none"></textarea>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="insuranceProvider" class="form-label">Insurance Provider</label>
+                                <input type="text" class="form-control" id="insuranceProvider" name="insuranceProvider" placeholder="e.g., AAR, Jubilee, Britam">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="preferredDoctor" class="form-label">Preferred Doctor</label>
+                                <select class="form-select" id="preferredDoctor" name="preferredDoctor">
+                                    <option value="">No preference</option>
+                                    <option value="dr_otieno">Dr. Cavin Otieno</option>
+                                    <option value="available">Any available doctor</option>
+                                </select>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="isEmergency" name="isEmergency">
+                                    <label class="form-check-label" for="isEmergency">
+                                        This is an emergency (will be prioritized)
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="firstTime" name="firstTime">
+                                    <label class="form-check-label" for="firstTime">
+                                        This is my first visit to this clinic
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="privacy" name="privacy" required>
+                                    <label class="form-check-label" for="privacy">
+                                        I agree to the <a href="#" class="text-primary">privacy policy</a> and consent to the processing of my personal data for medical purposes. *
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <button type="submit" class="btn-custom w-100">
+                                    <i class="fas fa-calendar-plus me-2"></i>Book Appointment
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="col-lg-4">
+                <div class="appointment-info">
+                    <h3 class="fw-bold mb-4">Appointment Information</h3>
+                    
+                    <div class="info-section mb-4">
+                        <h5 class="fw-bold mb-3">Before Your Visit</h5>
+                        <ul class="list-unstyled">
+                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Bring valid ID</li>
+                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Insurance card (if applicable)</li>
+                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>List of current medications</li>
+                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Previous medical records</li>
+                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Arrive 15 minutes early</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="info-section mb-4">
+                        <h5 class="fw-bold mb-3">Appointment Policies</h5>
+                        <ul class="list-unstyled">
+                            <li class="mb-2"><i class="fas fa-clock text-primary me-2"></i>Standard appointments: 30 minutes</li>
+                            <li class="mb-2"><i class="fas fa-clock text-primary me-2"></i>Follow-ups: 15 minutes</li>
+                            <li class="mb-2"><i class="fas fa-calendar text-primary me-2"></i>Cancel 24 hours in advance</li>
+                            <li class="mb-2"><i class="fas fa-phone text-primary me-2"></i>Reschedule via phone/WhatsApp</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="quick-booking">
+                        <h5 class="fw-bold mb-3">Quick Booking</h5>
+                        <p class="text-muted mb-3">Need to book immediately? Use these direct methods:</p>
+                        
+                        <div class="d-grid gap-2">
+                            <a href="tel:{{ contact_phone }}" class="btn btn-primary">
+                                <i class="fas fa-phone me-2"></i>Call Now
+                            </a>
+                            <a href="https://{{ whatsapp_link }}" target="_blank" class="btn btn-success">
+                                <i class="fab fa-whatsapp me-2"></i>WhatsApp Booking
+                            </a>
+                            <a href="mailto:{{ contact_email }}" class="btn btn-danger">
+                                <i class="fas fa-envelope me-2"></i>Email Request
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Services Quick Reference -->
+<section class="section" style="background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);">
+    <div class="container">
+        <h2 class="section-title">Our Medical Services</h2>
+        <p class="section-subtitle">Choose from our comprehensive range of healthcare services</p>
+        
+        <div class="row g-4">
+            <div class="col-lg-4 col-md-6">
+                <div class="service-summary-card">
+                    <div class="service-icon">
+                        <i class="fas fa-stethoscope"></i>
+                    </div>
+                    <h5 class="fw-bold">General Consultation</h5>
+                    <p>Comprehensive medical examinations for all ages</p>
+                    <span class="badge bg-primary">30 minutes</span>
+                </div>
+            </div>
+            
+            <div class="col-lg-4 col-md-6">
+                <div class="service-summary-card">
+                    <div class="service-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h5 class="fw-bold">Preventive Care</h5>
+                    <p>Health screenings and preventive measures</p>
+                    <span class="badge bg-success">30 minutes</span>
+                </div>
+            </div>
+            
+            <div class="col-lg-4 col-md-6">
+                <div class="service-summary-card">
+                    <div class="service-icon">
+                        <i class="fas fa-baby"></i>
+                    </div>
+                    <h5 class="fw-bold">Pediatric Care</h5>
+                    <p>Specialized healthcare for children</p>
+                    <span class="badge bg-info">30 minutes</span>
+                </div>
+            </div>
+            
+            <div class="col-lg-4 col-md-6">
+                <div class="service-summary-card">
+                    <div class="service-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h5 class="fw-bold">Chronic Care</h5>
+                    <p>Ongoing management of chronic conditions</p>
+                    <span class="badge bg-warning">45 minutes</span>
+                </div>
+            </div>
+            
+            <div class="col-lg-4 col-md-6">
+                <div class="service-summary-card">
+                    <div class="service-icon">
+                        <i class="fas fa-flask"></i>
+                    </div>
+                    <h5 class="fw-bold">Laboratory Services</h5>
+                    <p>Diagnostic testing and lab work</p>
+                    <span class="badge bg-secondary">15 minutes</span>
+                </div>
+            </div>
+            
+            <div class="col-lg-4 col-md-6">
+                <div class="service-summary-card">
+                    <div class="service-icon">
+                        <i class="fas fa-ambulance"></i>
+                    </div>
+                    <h5 class="fw-bold">Emergency Care</h5>
+                    <p>24/7 emergency medical services</p>
+                    <span class="badge bg-danger">Immediate</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Information -->
+<section class="section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto text-center">
+                <h2 class="section-title">Need Help with Your Appointment?</h2>
+                <p class="section-subtitle">Our friendly staff is here to assist you with booking, rescheduling, or any questions about our services.</p>
+                
+                <div class="row g-4 mt-4">
+                    <div class="col-md-4">
+                        <div class="contact-method">
+                            <i class="fas fa-phone text-primary" style="font-size: 2.5rem;"></i>
+                            <h5 class="fw-bold mt-3">{{ contact_phone }}</h5>
+                            <p class="text-muted">Call us for immediate assistance</p>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-4">
+                        <div class="contact-method">
+                            <i class="fab fa-whatsapp text-success" style="font-size: 2.5rem;"></i>
+                            <h5 class="fw-bold mt-3">WhatsApp</h5>
+                            <p class="text-muted">Quick messaging and booking</p>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-4">
+                        <div class="contact-method">
+                            <i class="fas fa-envelope text-danger" style="font-size: 2.5rem;"></i>
+                            <h5 class="fw-bold mt-3">{{ contact_email }}</h5>
+                            <p class="text-muted">Email us your questions</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+// Set minimum date to today
+document.getElementById('preferredDate').setAttribute('min', new Date().toISOString().split('T')[0]);
+
+document.getElementById('appointmentForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    // Get form data
+    const formData = new FormData(this);
+    const data = Object.fromEntries(formData);
+    
+    // Create comprehensive WhatsApp message
+    const isEmergency = data.isEmergency ? 'Yes' : 'No';
+    const isFirstTime = data.firstTime ? 'Yes' : 'No';
+    const preferredDate = new Date(data.preferredDate).toLocaleDateString();
+    const timeSlots = {
+        '08:00': '8:00 AM', '08:30': '8:30 AM', '09:00': '9:00 AM', '09:30': '9:30 AM',
+        '10:00': '10:00 AM', '10:30': '10:30 AM', '11:00': '11:00 AM', '11:30': '11:30 AM',
+        '12:00': '12:00 PM', '12:30': '12:30 PM', '13:00': '1:00 PM', '13:30': '1:30 PM',
+        '14:00': '2:00 PM', '14:30': '2:30 PM', '15:00': '3:00 PM', '15:30': '3:30 PM',
+        '16:00': '4:00 PM', '16:30': '4:30 PM', '17:00': '5:00 PM', '17:30': '5:30 PM'
+    };
+    const preferredTimeFormatted = timeSlots[data.preferredTime] || data.preferredTime;
+    
+    const doctorNames = {
+        'dr_otieno': 'Dr. Cavin Otieno',
+        'available': 'Any available doctor'
+    };
+    const preferredDoctorName = doctorNames[data.preferredDoctor] || 'No preference';
+    
+    const serviceNames = {
+        'general': 'General Consultation',
+        'preventive': 'Preventive Care',
+        'pediatric': 'Pediatric Care',
+        'emergency': 'Emergency Care',
+        'chronic': 'Chronic Disease Management',
+        'laboratory': 'Laboratory Services',
+        'followup': 'Follow-up Visit',
+        'specialist': 'Specialist Consultation',
+        'other': 'Other'
+    };
+    const serviceName = serviceNames[data.serviceType] || data.serviceType;
+    
+    const message = `🏥 *New Appointment Request*
+
+*Patient Information:*
+👤 *Name:* ${data.firstName} ${data.lastName}
+📧 *Email:* ${data.email}
+📱 *Phone:* ${data.phone}
+🎂 *Date of Birth:* ${data.dateOfBirth || 'Not provided'}
+
+*Appointment Details:*
+📅 *Preferred Date:* ${preferredDate}
+🕐 *Preferred Time:* ${preferredTimeFormatted}
+🏥 *Service:* ${serviceName}
+👨‍⚕️ *Preferred Doctor:* ${preferredDoctorName}
+🚨 *Emergency:* ${isEmergency}
+📝 *First Time Visit:* ${isFirstTime}
+
+*Medical Information:*
+🔍 *Reason for Visit:*
+${data.chiefComplaint}
+
+💊 *Current Medications:*
+${data.currentMedications || 'None specified'}
+
+⚠️ *Allergies:*
+${data.allergies || 'None specified'}
+
+🏥 *Insurance Provider:*
+${data.insuranceProvider || 'Not provided'}
+
+Please confirm this appointment or suggest alternative dates/times. Thank you!`;
+    
+    const encodedMessage = encodeURIComponent(message);
+    const whatsappURL = `https://{{ whatsapp_link }}?text=${encodedMessage}`;
+    
+    // Open WhatsApp
+    window.open(whatsappURL, '_blank');
+    
+    // Show success message
+    alert('Thank you for your appointment request! We will redirect you to WhatsApp to send your booking details directly. Our team will contact you to confirm your appointment.');
+    
+    // Reset form
+    this.reset();
+});
+
+// Auto-populate current date if emergency is checked
+document.getElementById('isEmergency').addEventListener('change', function() {
+    if (this.checked) {
+        document.getElementById('preferredDate').value = new Date().toISOString().split('T')[0];
+    }
+});
+
+// Highlight emergency checkbox if current time is urgent (example: before 8 AM or after 5 PM)
+function checkUrgentTime() {
+    const now = new Date();
+    const currentHour = now.getHours();
+    if (currentHour < 8 || currentHour > 17) {
+        document.getElementById('isEmergency').checked = true;
+    }
+}
+
+// Check on page load
+checkUrgentTime();
+</script>
+{% endblock %}
+
+{% block extra_css %}
+<style>
+.appointment-form-container {
+    background: white;
+    padding: 3rem;
+    border-radius: 20px;
+    box-shadow: 0 5px 30px rgba(0,0,0,0.1);
+}
+
+.appointment-info {
+    background: white;
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 5px 30px rgba(0,0,0,0.1);
+    height: fit-content;
+    position: sticky;
+    top: 100px;
+}
+
+.form-control,
+.form-select {
+    border-radius: 10px;
+    border: 2px solid #e9ecef;
+    padding: 0.8rem 1rem;
+    transition: all 0.3s ease;
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.2rem rgba(44, 95, 45, 0.25);
+}
+
+.service-summary-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: all 0.3s ease;
+    height: 100%;
+}
+
+.service-summary-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+.service-icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+    font-size: 1.5rem;
+}
+
+.contact-method {
+    padding: 2rem;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.contact-method:hover {
+    transform: translateY(-5px);
+}
+
+.info-section {
+    padding: 1.5rem;
+    background: rgba(44, 95, 45, 0.05);
+    border-radius: 10px;
+    border-left: 4px solid var(--primary-color);
+}
+
+.quick-booking .btn {
+    border-radius: 10px;
+    padding: 1rem;
+    font-weight: 600;
+}
+
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2.5rem !important;
+    }
+    
+    .appointment-form-container {
+        padding: 2rem 1.5rem;
+    }
+    
+    .appointment-info {
+        position: static;
+        margin-top: 2rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .appointment-form-container {
+        padding: 1.5rem 1rem;
+    }
+}
+</style>
+{% endblock %}

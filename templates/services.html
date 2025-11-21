@@ -1,0 +1,355 @@
+{% extends 'base.html' %}
+
+{% block title %}Our Services - {{ site_name }}{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="hero-section" style="padding: 120px 0 80px;">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto text-center">
+                <h1 class="hero-title" style="font-size: 3rem;">{{ title }}</h1>
+                <p class="hero-subtitle">Comprehensive healthcare solutions designed to meet all your medical needs with professional excellence and compassionate care</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Services Grid -->
+<section class="section">
+    <div class="container">
+        <div class="row g-4">
+            {% for service in services %}
+            <div class="col-lg-4 col-md-6">
+                <div class="card h-100 service-card">
+                    <div class="card-body text-center">
+                        <div class="card-icon">
+                            <i class="fas fa-{{ service.icon }}"></i>
+                        </div>
+                        <h4 class="card-title fw-bold mb-3">{{ service.title }}</h4>
+                        <p class="card-text mb-4">{{ service.description }}</p>
+                        <a href="{% url 'contact' %}" class="btn-custom-outline">
+                            <i class="fas fa-info-circle me-2"></i>Learn More
+                        </a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- Detailed Services Section -->
+<section class="section" style="background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);">
+    <div class="container">
+        <h2 class="section-title">Comprehensive Healthcare Solutions</h2>
+        <p class="section-subtitle">Detailed information about our medical services and specialties</p>
+        
+        <div class="row g-5">
+            <div class="col-lg-6">
+                <div class="service-detail">
+                    <div class="d-flex align-items-start mb-4">
+                        <div class="service-icon-bg">
+                            <i class="fas fa-stethoscope text-primary"></i>
+                        </div>
+                        <div class="ms-4">
+                            <h4 class="fw-bold">General Consultations</h4>
+                            <p>Comprehensive medical examinations and diagnoses for patients of all ages. Our thorough approach ensures accurate diagnoses and effective treatment plans.</p>
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Routine health checkups</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Acute illness management</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Medical history review</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Lifestyle counseling</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-6">
+                <div class="service-detail">
+                    <div class="d-flex align-items-start mb-4">
+                        <div class="service-icon-bg">
+                            <i class="fas fa-shield-alt text-primary"></i>
+                        </div>
+                        <div class="ms-4">
+                            <h4 class="fw-bold">Preventive Care</h4>
+                            <p>Proactive healthcare measures including regular screenings, vaccinations, and health monitoring to prevent diseases before they occur.</p>
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Annual health screenings</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Vaccination programs</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Blood pressure monitoring</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Cholesterol testing</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-6">
+                <div class="service-detail">
+                    <div class="d-flex align-items-start mb-4">
+                        <div class="service-icon-bg">
+                            <i class="fas fa-baby text-primary"></i>
+                        </div>
+                        <div class="ms-4">
+                            <h4 class="fw-bold">Pediatric Care</h4>
+                            <p>Specialized healthcare services designed specifically for children from infancy through adolescence, ensuring healthy development.</p>
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Childhood immunizations</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Growth and development assessments</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Pediatric emergency care</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Parenting guidance</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-6">
+                <div class="service-detail">
+                    <div class="d-flex align-items-start mb-4">
+                        <div class="service-icon-bg">
+                            <i class="fas fa-heart text-primary"></i>
+                        </div>
+                        <div class="ms-4">
+                            <h4 class="fw-bold">Chronic Disease Management</h4>
+                            <p>Ongoing care and support for patients with chronic conditions to maintain optimal health and quality of life.</p>
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Diabetes management</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Hypertension monitoring</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Asthma care plans</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Medication management</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Emergency Services -->
+<section class="section">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6 mb-4">
+                <img src="/media/images/medical_equipment_3.png" alt="Emergency Equipment" class="img-fluid rounded-4 shadow-lg">
+            </div>
+            <div class="col-lg-6">
+                <h2 class="section-title text-start">24/7 Emergency Care</h2>
+                <p class="lead mb-4">When medical emergencies arise, our experienced team is ready to provide immediate, life-saving care with state-of-the-art equipment.</p>
+                
+                <div class="emergency-features">
+                    <div class="feature-item mb-3">
+                        <i class="fas fa-ambulance text-danger me-3"></i>
+                        <span><strong>24/7 Availability:</strong> Round-the-clock emergency medical services</span>
+                    </div>
+                    <div class="feature-item mb-3">
+                        <i class="fas fa-user-md text-danger me-3"></i>
+                        <span><strong>Expert Team:</strong> Emergency medicine specialists on call</span>
+                    </div>
+                    <div class="feature-item mb-3">
+                        <i class="fas fa-heartbeat text-danger me-3"></i>
+                        <span><strong>Advanced Equipment:</strong> Modern life support and monitoring systems</span>
+                    </div>
+                    <div class="feature-item mb-3">
+                        <i class="fas fa-phone text-danger me-3"></i>
+                        <span><strong>Quick Response:</strong> Immediate assessment and treatment protocols</span>
+                    </div>
+                </div>
+                
+                <div class="mt-4">
+                    <h5 class="fw-bold text-danger">Emergency Contact: {{ contact_phone }}</h5>
+                    <a href="https://{{ whatsapp_link }}" target="_blank" class="btn-custom" style="background: #25d366; color: white;">
+                        <i class="fab fa-whatsapp me-2"></i>Emergency WhatsApp
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Laboratory Services -->
+<section class="section" style="background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%); color: white;">
+    <div class="container">
+        <h2 class="section-title" style="color: white;">State-of-the-Art Laboratory Services</h2>
+        <p class="section-subtitle" style="color: rgba(255,255,255,0.9);">Advanced diagnostic testing with accurate and timely results</p>
+        
+        <div class="row g-4">
+            <div class="col-lg-4">
+                <div class="card h-100" style="background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); backdrop-filter: blur(10px);">
+                    <div class="card-body text-center">
+                        <div class="card-icon">
+                            <i class="fas fa-flask"></i>
+                        </div>
+                        <h4 class="card-title fw-bold">Blood Tests</h4>
+                        <p class="card-text">Comprehensive blood work including complete blood count, metabolic panels, lipid profiles, and specialized biomarkers.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-4">
+                <div class="card h-100" style="background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); backdrop-filter: blur(10px);">
+                    <div class="card-body text-center">
+                        <div class="card-icon">
+                            <i class="fas fa-microscope"></i>
+                        </div>
+                        <h4 class="card-title fw-bold">Microbiology</h4>
+                        <p class="card-text">Bacterial and fungal cultures, antibiotic sensitivity testing, and comprehensive infection screening.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-4">
+                <div class="card h-100" style="background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); backdrop-filter: blur(10px);">
+                    <div class="card-body text-center">
+                        <div class="card-icon">
+                            <i class="fas fa-dna"></i>
+                        </div>
+                        <h4 class="card-title fw-bold">Specialized Tests</h4>
+                        <p class="card-text">Hormone levels, cardiac markers, tumor markers, and other specialized diagnostic tests.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Service Areas -->
+<section class="section">
+    <div class="container">
+        <h2 class="section-title">Areas We Serve</h2>
+        <p class="section-subtitle">Proudly serving communities across Kenya with quality healthcare</p>
+        
+        <div class="row g-4">
+            <div class="col-lg-3 col-md-6">
+                <div class="text-center">
+                    <div class="service-area-icon">
+                        <i class="fas fa-map-marker-alt text-primary" style="font-size: 3rem;"></i>
+                    </div>
+                    <h5 class="fw-bold mt-3">Nairobi County</h5>
+                    <p class="text-muted">Comprehensive medical services for Nairobi residents</p>
+                </div>
+            </div>
+            
+            <div class="col-lg-3 col-md-6">
+                <div class="text-center">
+                    <div class="service-area-icon">
+                        <i class="fas fa-hospital text-primary" style="font-size: 3rem;"></i>
+                    </div>
+                    <h5 class="fw-bold mt-3">Central Kenya</h5>
+                    <p class="text-muted">Quality healthcare for Central Kenya communities</p>
+                </div>
+            </div>
+            
+            <div class="col-lg-3 col-md-6">
+                <div class="text-center">
+                    <div class="service-area-icon">
+                        <i class="fas fa-user-friends text-primary" style="font-size: 3rem;"></i>
+                    </div>
+                    <h5 class="fw-bold mt-3">Western Kenya</h5>
+                    <p class="text-muted">Healthcare services for Western Kenya residents</p>
+                </div>
+            </div>
+            
+            <div class="col-lg-3 col-md-6">
+                <div class="text-center">
+                    <div class="service-area-icon">
+                        <i class="fas fa-globe-africa text-primary" style="font-size: 3rem;"></i>
+                    </div>
+                    <h5 class="fw-bold mt-3">Nationwide</h5>
+                    <p class="text-muted">Telemedicine consultations for patients across Kenya</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="section" style="background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto text-center">
+                <h2 class="section-title">Ready to Experience Our Healthcare Services?</h2>
+                <p class="section-subtitle">Book your appointment today and discover the difference quality medical care can make</p>
+                <div class="cta-buttons">
+                    <a href="{% url 'appointments' %}" class="btn-custom me-3">
+                        <i class="fas fa-calendar-plus me-2"></i>Book Appointment
+                    </a>
+                    <a href="{% url 'contact' %}" class="btn-custom" style="background: var(--primary-color); color: white;">
+                        <i class="fas fa-phone me-2"></i>Contact Us
+                    </a>
+                </div>
+                <div class="mt-4">
+                    <p class="text-muted">
+                        <i class="fas fa-phone me-2"></i>{{ contact_phone }} | 
+                        <i class="fab fa-whatsapp me-2"></i><a href="https://{{ whatsapp_link }}" target="_blank">WhatsApp</a> | 
+                        <i class="fas fa-envelope me-2"></i>{{ contact_email }}
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block extra_css %}
+<style>
+.service-card {
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--primary-color);
+}
+
+.btn-custom-outline {
+    background: transparent;
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+    padding: 0.7rem 1.5rem;
+    border-radius: 25px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.btn-custom-outline:hover {
+    background: var(--primary-color);
+    color: white;
+    transform: translateY(-2px);
+}
+
+.service-detail {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    height: 100%;
+}
+
+.service-icon-bg {
+    width: 60px;
+    height: 60px;
+    background: rgba(44, 95, 45, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.service-area-icon {
+    margin-bottom: 1rem;
+}
+
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2.5rem !important;
+    }
+}
+</style>
+{% endblock %}

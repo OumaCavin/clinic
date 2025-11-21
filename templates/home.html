@@ -1,0 +1,338 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ site_name }} - {{ hero_title }}{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="hero-section">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <div class="hero-content">
+                    <h1 class="hero-title">{{ hero_title }}</h1>
+                    <p class="hero-subtitle">{{ hero_subtitle }}</p>
+                    <div class="hero-buttons">
+                        <a href="{% url 'appointments' %}" class="btn-custom me-3">
+                            <i class="fas fa-calendar-plus me-2"></i>Book Appointment
+                        </a>
+                        <a href="{% url 'services' %}" class="btn-outline-light-custom">
+                            <i class="fas fa-stethoscope me-2"></i>Our Services
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="hero-image">
+                    <img src="/media/images/medical_team_1.jpg" alt="Medical Team" class="img-fluid rounded-4 shadow-lg" style="max-height: 500px;">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Statistics Section -->
+<section class="section">
+    <div class="container">
+        <div class="row text-center">
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-users" style="font-size: 3rem; color: var(--primary-color);"></i>
+                    </div>
+                    <h3 class="fw-bold" style="font-size: 2.5rem; color: var(--primary-color);">5000+</h3>
+                    <p class="text-muted">Patients Served</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-award" style="font-size: 3rem; color: var(--primary-color);"></i>
+                    </div>
+                    <h3 class="fw-bold" style="font-size: 2.5rem; color: var(--primary-color);">10+</h3>
+                    <p class="text-muted">Years Experience</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-heart" style="font-size: 3rem; color: var(--primary-color);"></i>
+                    </div>
+                    <h3 class="fw-bold" style="font-size: 2.5rem; color: var(--primary-color);">98%</h3>
+                    <p class="text-muted">Success Rate</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-clock" style="font-size: 3rem; color: var(--primary-color);"></i>
+                    </div>
+                    <h3 class="fw-bold" style="font-size: 2.5rem; color: var(--primary-color);">24/7</h3>
+                    <p class="text-muted">Emergency Care</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- About Section -->
+<section class="section" style="background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6 mb-4">
+                <img src="/media/images/doctor_portrait_1.jpg" alt="Dr. Cavin Otieno" class="img-fluid rounded-4 shadow-lg">
+            </div>
+            <div class="col-lg-6">
+                <div class="about-content">
+                    <h2 class="section-title text-start">Meet Dr. Cavin Otieno</h2>
+                    <p class="lead mb-4">Leading medical professional dedicated to providing exceptional healthcare services in Kenya.</p>
+                    <p class="mb-4">Dr. Cavin Otieno brings years of experience and a passion for patient care to our clinic. With a commitment to staying current with the latest medical advances, Dr. Otieno ensures that every patient receives personalized, compassionate, and comprehensive medical care.</p>
+                    <div class="features">
+                        <div class="feature-item mb-3">
+                            <i class="fas fa-check-circle text-success me-2"></i>
+                            <span>Board-certified medical practitioner</span>
+                        </div>
+                        <div class="feature-item mb-3">
+                            <i class="fas fa-check-circle text-success me-2"></i>
+                            <span>Specialized in family medicine</span>
+                        </div>
+                        <div class="feature-item mb-3">
+                            <i class="fas fa-check-circle text-success me-2"></i>
+                            <span>Committed to preventive care</span>
+                        </div>
+                        <div class="feature-item mb-3">
+                            <i class="fas fa-check-circle text-success me-2"></i>
+                            <span>Multilingual (English, Swahili, Luo)</span>
+                        </div>
+                    </div>
+                    <a href="{% url 'about' %}" class="btn-custom">
+                        <i class="fas fa-user-md me-2"></i>Learn More About Dr. Otieno
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Services Preview -->
+<section class="section">
+    <div class="container">
+        <h2 class="section-title">Our Medical Services</h2>
+        <p class="section-subtitle">Comprehensive healthcare solutions tailored to your needs</p>
+        
+        <div class="row g-4">
+            <div class="col-lg-4 col-md-6">
+                <div class="card h-100">
+                    <div class="card-body text-center">
+                        <div class="card-icon">
+                            <i class="fas fa-stethoscope"></i>
+                        </div>
+                        <h4 class="card-title">General Consultations</h4>
+                        <p class="card-text">Comprehensive medical examinations and diagnoses for patients of all ages.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-4 col-md-6">
+                <div class="card h-100">
+                    <div class="card-body text-center">
+                        <div class="card-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h4 class="card-title">Preventive Care</h4>
+                        <p class="card-text">Regular health screenings and preventive measures to keep you healthy.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-4 col-md-6">
+                <div class="card h-100">
+                    <div class="card-body text-center">
+                        <div class="card-icon">
+                            <i class="fas fa-baby"></i>
+                        </div>
+                        <h4 class="card-title">Pediatric Care</h4>
+                        <p class="card-text">Specialized healthcare services designed specifically for children.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-4 col-md-6">
+                <div class="card h-100">
+                    <div class="card-body text-center">
+                        <div class="card-icon">
+                            <i class="fas fa-ambulance"></i>
+                        </div>
+                        <h4 class="card-title">Emergency Care</h4>
+                        <p class="card-text">24/7 emergency medical services for urgent healthcare needs.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-4 col-md-6">
+                <div class="card h-100">
+                    <div class="card-body text-center">
+                        <div class="card-icon">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <h4 class="card-title">Chronic Disease Management</h4>
+                        <p class="card-text">Ongoing care and management for chronic health conditions.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-4 col-md-6">
+                <div class="card h-100">
+                    <div class="card-body text-center">
+                        <div class="card-icon">
+                            <i class="fas fa-flask"></i>
+                        </div>
+                        <h4 class="card-title">Laboratory Services</h4>
+                        <p class="card-text">State-of-the-art diagnostic testing and laboratory services.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="text-center mt-5">
+            <a href="{% url 'services' %}" class="btn-custom">
+                <i class="fas fa-list-ul me-2"></i>View All Services
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Testimonials -->
+<section class="section" style="background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%); color: white;">
+    <div class="container">
+        <h2 class="section-title" style="color: white;">What Our Patients Say</h2>
+        <p class="section-subtitle" style="color: rgba(255,255,255,0.9);">Hear from our satisfied patients about their experience with our healthcare services</p>
+        
+        <div class="row g-4">
+            <div class="col-lg-4">
+                <div class="card" style="background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); backdrop-filter: blur(10px);">
+                    <div class="card-body text-center">
+                        <img src="/media/images/happy_family_5.jpg" alt="Patient" class="rounded-circle mb-3" width="80" height="80" style="object-fit: cover;">
+                        <div class="stars mb-3">
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                        </div>
+                        <p class="mb-3">"Dr. Otieno and his team provided exceptional care. The clinic is modern, clean, and the staff is very professional. I highly recommend their services."</p>
+                        <h6 class="fw-bold">Sarah Wanjiku</h6>
+                        <small class="text-light">Nairobi Resident</small>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-4">
+                <div class="card" style="background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); backdrop-filter: blur(10px);">
+                    <div class="card-body text-center">
+                        <img src="/media/images/happy_family_6.jpg" alt="Patient" class="rounded-circle mb-3" width="80" height="80" style="object-fit: cover;">
+                        <div class="stars mb-3">
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                        </div>
+                        <p class="mb-3">"The pediatric care here is outstanding. Dr. Otieno is patient with children and explains everything clearly. Great experience for our whole family."</p>
+                        <h6 class="fw-bold">James Mwangi</h6>
+                        <small class="text-light">Father of Two</small>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-4">
+                <div class="card" style="background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); backdrop-filter: blur(10px);">
+                    <div class="card-body text-center">
+                        <img src="/media/images/happy_family_7.jpg" alt="Patient" class="rounded-circle mb-3" width="80" height="80" style="object-fit: cover;">
+                        <div class="stars mb-3">
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                        </div>
+                        <p class="mb-3">"Emergency care was exceptional during a critical time. Quick response, professional treatment, and excellent follow-up care. Truly grateful."</p>
+                        <h6 class="fw-bold">Grace Achieng</h6>
+                        <small class="text-light">Business Owner</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto text-center">
+                <h2 class="section-title">Ready to Experience Quality Healthcare?</h2>
+                <p class="section-subtitle">Book your appointment today and take the first step towards better health with Dr. Cavin Otieno and our professional medical team.</p>
+                <div class="cta-buttons">
+                    <a href="{% url 'appointments' %}" class="btn-custom me-3">
+                        <i class="fas fa-calendar-plus me-2"></i>Book Appointment
+                    </a>
+                    <a href="{% url 'contact' %}" class="btn-custom" style="background: var(--primary-color); color: white;">
+                        <i class="fas fa-phone me-2"></i>Contact Us
+                    </a>
+                </div>
+                <div class="mt-4">
+                    <p class="text-muted">
+                        <i class="fas fa-phone me-2"></i>{{ contact_phone }} | 
+                        <i class="fab fa-whatsapp me-2"></i><a href="https://{{ whatsapp_link }}" target="_blank">WhatsApp</a> | 
+                        <i class="fas fa-envelope me-2"></i>{{ contact_email }}
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block extra_css %}
+<style>
+.stat-card {
+    padding: 2rem;
+    transition: all 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+}
+
+.about-content {
+    padding: 2rem 0;
+}
+
+.feature-item {
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+}
+
+.stars {
+    font-size: 1.2rem;
+}
+
+.cta-buttons {
+    margin-top: 2rem;
+}
+
+@media (max-width: 768px) {
+    .hero-buttons {
+        text-align: center;
+    }
+    
+    .hero-buttons .btn-custom,
+    .hero-buttons .btn-outline-light-custom {
+        margin: 0.5rem 0;
+        display: block;
+        width: 100%;
+    }
+}
+</style>
+{% endblock %}
