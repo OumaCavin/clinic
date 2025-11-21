@@ -311,16 +311,63 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 - Western Kenya
 - Nationwide Telemedicine
 
+## 🚀 Advanced Features
+
+### Error Handling
+- **Global 404 Handler**: Custom branded 404 error page with emergency contact information
+- **Global 500 Handler**: Server error page with technical support contact
+- **User-Friendly Errors**: Professional error pages that maintain brand consistency
+
+### Admin Interface
+- **Medical Admin Panel**: Custom Django admin for managing patients, appointments, and medical records
+- **Patient Management**: Track patient information, medical history, and contact details
+- **Appointment System**: Manage appointments with status tracking and doctor assignments
+- **Medical Records**: Secure storage and management of patient medical information
+- **Security**: Staff-only access to sensitive medical records
+
+### SEO & Optimization
+- **XML Sitemap**: Automatically generated sitemap for search engine optimization
+- **Business Hours**: Dynamic business hours checking for improved user experience
+- **Phone Formatting**: Automatic formatting of Kenyan phone numbers
+- **Email System**: Automated appointment confirmation emails
+
+### Configuration Management
+- **Environment Files**: `.env.example` and `.env.production` for secure configuration
+- **Database Flexibility**: Support for both SQLite (development) and PostgreSQL (production)
+- **Email Configuration**: SMTP settings for production email functionality
+- **Security Settings**: Production-ready security configurations
+
+## 🗄️ Database Setup
+
+After cloning the repository, run the following commands to set up the database:
+
+```bash
+cd clinic
+python manage.py makemigrations medical
+python manage.py migrate
+python manage.py createsuperuser  # Optional: Create admin user
+```
+
+This will create the database tables for:
+- Patient information and records
+- Appointment scheduling
+- Medical record management
+- Admin user authentication
+
 ## 📞 Support
 
 For technical support or questions about the website:
 
-1. **Email**: Technical issues and feature requests
-2. **Documentation**: Refer to Django and Bootstrap documentation
-3. **Issues**: Report bugs via GitHub Issues
+1. **Email**: cavin.otieno012@gmail.com
+2. **Phone**: +254708101604
+3. **Documentation**: Refer to Django and Bootstrap documentation
+4. **Issues**: Report bugs via GitHub Issues
 
 ---
 
 **Built with ❤️ for Quality Healthcare in Kenya**
 
 *This website is designed to serve the Kenyan healthcare community with professional, accessible, and modern web presence.*
+
+**Author**: OumaCavin  
+**Contact**: +254708101604, cavin.otieno012@gmail.com
