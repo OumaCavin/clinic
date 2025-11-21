@@ -18,3 +18,8 @@ def handler404(request, exception):
 def handler500(request):
     """Custom 500 error handler."""
     return render(request, '500.html', status=500)
+
+
+def not_found(request, exception=None):
+    """Custom 404 not found handler."""
+    return render(request, '404.html', status=404)
