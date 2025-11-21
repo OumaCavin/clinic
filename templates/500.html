@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+
+{% block title %}Server Error - Cavin Otieno Medical Clinic{% endblock %}
+
+{% block content %}
+<div class="container my-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8 text-center">
+            <div class="error-page">
+                <div class="error-number">500</div>
+                <h2 class="mb-4">Server Error</h2>
+                <p class="lead mb-4">Something went wrong on our end. We're working to fix the issue.</p>
+                
+                <div class="error-actions">
+                    <a href="{% url 'medical:home' %}" class="btn btn-primary btn-lg me-3">
+                        <i class="fas fa-home"></i> Go Home
+                    </a>
+                    <button onclick="window.location.reload()" class="btn btn-outline-primary btn-lg">
+                        <i class="fas fa-sync-alt"></i> Try Again
+                    </button>
+                </div>
+                
+                <div class="emergency-contact mt-5 p-4 bg-light rounded">
+                    <h4><i class="fas fa-headset text-primary"></i> Need Help Right Now?</h4>
+                    <p class="mb-2">If this problem persists, please contact our technical support:</p>
+                    <p class="fw-bold">
+                        <i class="fas fa-phone"></i> <a href="tel:+254708101604">+254708101604</a>
+                        or 
+                        <a href="https://wa.me/254708101604" target="_blank" class="text-success">
+                            <i class="fab fa-whatsapp"></i> WhatsApp
+                        </a>
+                    </p>
+                    <p class="text-muted small">Email: <a href="mailto:cavin.otieno012@gmail.com">cavin.otieno012@gmail.com</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+.error-page {
+    padding: 3rem 0;
+}
+
+.error-number {
+    font-size: 8rem;
+    font-weight: bold;
+    color: #dc3545;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+    margin-bottom: 1rem;
+}
+
+.error-actions .btn {
+    padding: 0.75rem 2rem;
+    font-size: 1.1rem;
+    border-radius: 50px;
+}
+
+.emergency-contact {
+    border-left: 4px solid #007bff;
+}
+
+@media (max-width: 768px) {
+    .error-number {
+        font-size: 6rem;
+    }
+    
+    .error-actions .btn {
+        display: block;
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+}
+</style>
+{% endblock %}

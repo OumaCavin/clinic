@@ -63,7 +63,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                'medical.context_processors.site_settings',
+                'medical.context_processors.contact_info',
             ],
         },
     },
@@ -107,7 +107,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Africa/Nairobi'
 
 USE_I18N = True
 
@@ -138,3 +138,34 @@ MEDIA_ROOT = BASE_DIR / 'media'
 SITE_NAME = 'Cavin Otieno Medical Clinic'
 SITE_TAGLINE = 'Professional Healthcare Services in Kenya'
 SITE_DESCRIPTION = 'Quality medical care by Cavin Otieno and team'
+
+# Security Settings
+SECURE_CONTENT_TYPE_NOSNIFF = True
+SECURE_BROWSER_XSS_FILTER = True
+X_FRAME_OPTIONS = 'DENY'
+
+# Email Configuration (for production)
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'your-email@gmail.com'  # Replace in production
+EMAIL_HOST_PASSWORD = 'your-app-password'  # Replace in production
+DEFAULT_FROM_EMAIL = 'noreply@clinic.com'
+
+# Global Error Handlers
+handler404 = 'clinicproject.views.handler404'
+handler500 = 'clinicproject.views.handler500'
+
+# Session Security
+SESSION_COOKIE_SECURE = True
+SESSION_COOKIE_HTTPONLY = True
+CSRF_COOKIE_SECURE = True
+
+# Cache Settings (for production)
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.locmem.LocMemCache',
+        'LOCATION': 'unique-snowflake',
+    }
+}
