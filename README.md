@@ -285,6 +285,7 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 - **Phone**: +254708101604
 - **Email**: cavin.otieno012@gmail.com
 - **WhatsApp**: wa.me/+254708101604
+- **LinkedIn**: [cavin-otieno-9a841260](https://www.linkedin.com/in/cavin-otieno-9a841260/)
 - **Location**: Nairobi, Kenya
 
 ## 🏥 Services Overview
@@ -360,8 +361,9 @@ For technical support or questions about the website:
 
 1. **Email**: cavin.otieno012@gmail.com
 2. **Phone**: +254708101604
-3. **Documentation**: Refer to Django and Bootstrap documentation
-4. **Issues**: Report bugs via GitHub Issues
+3. **LinkedIn**: [cavin-otieno-9a841260](https://www.linkedin.com/in/cavin-otieno-9a841260/)
+4. **Documentation**: Refer to Django and Bootstrap documentation
+5. **Issues**: Report bugs via GitHub Issues
 
 ---
 

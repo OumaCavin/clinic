@@ -14,5 +14,6 @@ def contact_info(request):
         'contact_phone': '+254708101604',
         'whatsapp_link': 'wa.me/+254708101604',
         'contact_email': 'cavin.otieno012@gmail.com',
+        'linkedin_profile': 'https://www.linkedin.com/in/cavin-otieno-9a841260/',
         'author_name': 'Cavin Otieno',
     }
