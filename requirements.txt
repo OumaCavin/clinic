@@ -1,0 +1,16 @@
+# Django Clinic Website Requirements
+# Core Django framework
+Django>=4.2.0,<6.0
+
+# Image processing library
+Pillow>=10.0.0
+
+# Optional: For enhanced functionality
+# django-debug-toolbar>=4.0.0
+# django-cors-headers>=4.0.0
+# whitenoise>=6.0.0
+
+# For deployment
+# gunicorn>=21.0.0
+# psycopg2-binary>=2.9.0  # For PostgreSQL
+# python-decouple>=3.8  # For environment variables
