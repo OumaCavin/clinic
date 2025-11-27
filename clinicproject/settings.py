@@ -77,19 +77,27 @@ WSGI_APPLICATION = 'clinicproject.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'clinic_db',  # Database name for XAMPP MySQL
-        'USER': 'root',  # XAMPP default MySQL user
-        'PASSWORD': '',  # XAMPP default MySQL password (empty)
-        'HOST': 'localhost',  # XAMPP MySQL host
-        'PORT': '3306',  # XAMPP MySQL default port
-        'OPTIONS': {
-            'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
-            'charset': 'utf8mb4',
-            'init_command': "SET NAMES utf8mb4 COLLATE utf8mb4_unicode_ci",
-        }
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+
+# Uncomment and modify below for MySQL with XAMPP:
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'clinic_db',  # Database name for XAMPP MySQL
+#         'USER': 'root',  # XAMPP default MySQL user
+#         'PASSWORD': '',  # XAMPP default MySQL password (empty)
+#         'HOST': 'localhost',  # XAMPP MySQL host
+#         'PORT': '3306',  # XAMPP MySQL default port
+#         'OPTIONS': {
+#             'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
+#             'charset': 'utf8mb4',
+#             'init_command': "SET NAMES utf8mb4 COLLATE utf8mb4_unicode_ci",
+#         }
+#     }
+# }
 
 
 # Password validation
