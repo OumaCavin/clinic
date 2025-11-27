@@ -9,14 +9,75 @@ Before you begin, ensure you have the following installed on your machine:
 ### Required Software
 - **Python 3.8 or higher** - [Download Python](https://www.python.org/downloads/)
 - **Git** - [Download Git](https://git-scm.com/downloads)
+- **XAMPP** (for MySQL database) - [Download XAMPP](https://www.apachefriends.org/)
 - **Code Editor** (VS Code, PyCharm, etc.)
+
+### Database Options
+1. **XAMPP MySQL (Recommended)** - Complete web server stack with MySQL
+2. **SQLite** - Default Django database (for simple testing)
 
 ### Optional but Recommended
 - **pip** (comes with Python)
 - **virtualenv** or **venv** (included in Python 3.3+)
 - **GitHub Desktop** (for easier Git operations)
 
-## 🚀 Quick Setup (5 minutes)
+## 🚀 Quick Setup Options
+
+Choose your preferred database setup:
+
+### Option 1: XAMPP MySQL Database (Recommended)
+
+1. **Install XAMPP**:
+   - Download from [https://www.apachefriends.org/](https://www.apachefriends.org/)
+   - Install and start Apache & MySQL services
+
+2. **Create Database**:
+   - Go to `http://localhost/phpmyadmin`
+   - Create database named `clinic_db`
+   - Set collation to `utf8mb4_unicode_ci`
+
+3. **Setup Project**:
+   ```bash
+   git clone <repository-url>
+   cd clinic
+   python -m venv clinic_env
+   
+   # Windows
+   clinic_env\Scripts\activate
+   # macOS/Linux
+   source clinic_env/bin/activate
+   
+   pip install -r requirements.txt
+   python manage.py makemigrations medical
+   python manage.py migrate
+   python manage.py createsuperuser
+   python manage.py runserver
+   ```
+
+4. **Access Admin**: `http://127.0.0.1:8000/admin/`
+
+### Option 2: SQLite (Quick Testing)
+
+```bash
+git clone <repository-url>
+cd clinic
+python -m venv clinic_env
+
+# Windows
+clinic_env\Scripts\activate
+# macOS/Linux  
+source clinic_env/bin/activate
+
+pip install Django Pillow
+python manage.py makemigrations medical
+python manage.py migrate
+python manage.py createsuperuser
+python manage.py runserver
+```
+
+For detailed XAMPP setup instructions, see `XAMPP_SETUP.md`
+
+## 📝 Setup Steps for XAMPP
 
 Follow these steps to get the website running locally:
 

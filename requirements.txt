@@ -5,6 +5,12 @@ Django>=4.2.0,<6.0
 # Image processing library
 Pillow>=10.0.0
 
+# Database - MySQL for XAMPP
+mysqlclient>=5.1.0  # MySQL client for Django
+
+# Alternative MySQL connector (if mysqlclient fails)
+# PyMySQL>=1.1.0
+
 # Optional: For enhanced functionality
 # django-debug-toolbar>=4.0.0
 # django-cors-headers>=4.0.0
@@ -14,3 +20,7 @@ Pillow>=10.0.0
 # gunicorn>=21.0.0
 # psycopg2-binary>=2.9.0  # For PostgreSQL
 # python-decouple>=3.8  # For environment variables
+
+# Development tools
+# django-extensions>=3.2.0
+# ipython>=8.0.0
