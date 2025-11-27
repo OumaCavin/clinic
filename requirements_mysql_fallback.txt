@@ -1,0 +1,25 @@
+# Django Clinic Website Requirements - Alternative for MySQL Issues
+# Core Django framework
+Django>=4.2.0,<6.0
+
+# Image processing library
+Pillow>=10.0.0
+
+# Alternative MySQL connectors (choose one that works for your system)
+PyMySQL>=1.1.0  # Python pure MySQL client
+# mysql-connector-python>=8.1.0  # Alternative (commented out)
+# mysqlclient>=5.1.0  # Original (commented due to compatibility issues)
+
+# Optional: For enhanced functionality
+# django-debug-toolbar>=4.0.0
+# django-cors-headers>=4.0.0
+# whitenoise>=6.0.0
+
+# For deployment
+# gunicorn>=21.0.0
+# psycopg2-binary>=2.9.0  # For PostgreSQL
+# python-decouple>=3.8  # For environment variables
+
+# Development tools
+# django-extensions>=3.2.0
+# ipython>=8.0.0
